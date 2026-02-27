@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowTask | Task Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="app-page">
+  <header class="app-header">
+    <a class="brand" href="index.html">FlowTask</a>
+    <div class="user-area">
+      <span id="welcomeText">Account</span>
+      <button id="logoutBtn" class="btn btn-outline" type="button">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard-layout">
+    <section class="dashboard-sidebar">
+      <h1>Task Dashboard</h1>
+      <p>Plan what to do, track progress, and finish on time.</p>
+
+      <div class="stats-grid">
+        <article>
+          <h2 id="totalCount">0</h2>
+          <p>Total Tasks</p>
+        </article>
+        <article>
+          <h2 id="dueSoonCount">0</h2>
+          <p>Due Soon</p>
+        </article>
+        <article>
+          <h2 id="completedCount">0</h2>
+          <p>Completed</p>
+        </article>
+      </div>
+
+      <form id="taskForm" class="task-form" novalidate>
+        <h2 id="formTitle">Add New Task</h2>
+
+        <label for="taskTitle">Task Title</label>
+        <input id="taskTitle" type="text" maxlength="80" required />
+
+        <label for="taskDescription">Description / Note</label>
+        <textarea id="taskDescription" rows="3" maxlength="220" required></textarea>
+
+        <label for="taskDueDate">Due Date</label>
+        <input id="taskDueDate" type="date" required />
+
+        <label for="taskPriority">Priority</label>
+        <select id="taskPriority" required>
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <label for="taskStatus">Status</label>
+        <select id="taskStatus" required>
+          <option value="pending" selected>Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+
+        <label for="taskAssignee">Assign To</label>
+        <select id="taskAssignee" required></select>
+
+        <div class="form-actions">
+          <button class="btn btn-solid" type="submit" id="saveTaskBtn">Save Task</button>
+          <button class="btn btn-ghost hidden" type="button" id="cancelEditBtn">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="dashboard-main">
+      <div class="filters-bar">
+        <input id="searchInput" type="search" placeholder="Search tasks..." />
+        <select id="statusFilter">
+          <option value="all">All Statuses</option>
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+        <select id="priorityFilter">
+          <option value="all">All Priorities</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+        <select id="dueSort">
+          <option value="due-asc">Due Date (Earliest)</option>
+          <option value="due-desc">Due Date (Latest)</option>
+        </select>
+      </div>
+
+      <p id="taskMessage" class="auth-message" aria-live="polite"></p>
+      <div id="undoBar" class="undo-bar hidden" aria-live="polite">
+        <span id="undoText">Task deleted.</span>
+        <button id="undoDeleteBtn" class="action-btn" type="button">Undo</button>
+      </div>
+
+      <div class="task-columns">
+        <article class="task-column">
+          <h2>Pending</h2>
+          <div id="pendingColumn" class="task-list"></div>
+        </article>
+
+        <article class="task-column">
+          <h2>In Progress</h2>
+          <div id="inProgressColumn" class="task-list"></div>
+        </article>
+
+        <article class="task-column">
+          <h2>Completed</h2>
+          <div id="completedColumn" class="task-list"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

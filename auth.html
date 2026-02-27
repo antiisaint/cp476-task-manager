@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowTask | Login or Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-side-panel">
+      <a class="brand" href="index.html">FlowTask</a>
+      <h1>Keep your plans moving.</h1>
+      <p>Sign in to continue managing tasks or create a new account to begin.</p>
+      <ul>
+        <li>Organize tasks by status</li>
+        <li>Track due dates and priorities</li>
+        <li>Save progress in your browser</li>
+      </ul>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-tabs">
+        <button id="showLogin" class="active" type="button">Login</button>
+        <button id="showRegister" type="button">Register</button>
+      </div>
+
+      <p id="authMessage" class="auth-message" aria-live="polite"></p>
+
+      <form id="loginForm" class="auth-form" novalidate>
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" required />
+
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" minlength="8" required />
+
+        <button class="btn btn-solid" type="submit">Sign In</button>
+      </form>
+
+      <form id="registerForm" class="auth-form hidden" novalidate>
+        <label for="registerName">Full Name</label>
+        <input id="registerName" type="text" minlength="2" required />
+
+        <label for="registerEmail">Email</label>
+        <input id="registerEmail" type="email" required />
+
+        <label for="registerPassword">Password</label>
+        <input id="registerPassword" type="password" minlength="8" required />
+
+        <button class="btn btn-solid" type="submit">Create Account</button>
+      </form>
+
+      <a class="auth-back-link" href="index.html">Back to landing page</a>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
