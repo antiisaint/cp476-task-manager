@@ -13,15 +13,17 @@ A web based task manager for organizing and tracking work in personal or team se
 - Filter and sort tasks
 - Team task assignment
 
-## Setup Instructions
+## Run Locally (Frontend + Backend)
 1. Install dependencies:
    - `npm install`
-2. Run backend in development mode:
-   - `npm run dev`
-3. Or run normally:
-   - `npm start`
+2. Start backend:
+   - Development mode: `npm run dev`
+   - Normal mode: `npm start`
+3. Open the frontend directly:
+   - Open `index.html` in your browser (double-click or right-click -> Open With browser)
 
 Backend default URL: `http://localhost:3000`
+Frontend file: `index.html`
 
 ## Initial Backend Routes (Skeleton)
 - `GET /` - API welcome route
