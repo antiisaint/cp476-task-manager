@@ -14,7 +14,35 @@ A web based task manager for organizing and tracking work in personal or team se
 - Team task assignment
 
 ## Setup Instructions
-*(To be added in Milestone 02)*
+1. Install dependencies:
+   - `npm install`
+2. Run backend in development mode:
+   - `npm run dev`
+3. Or run normally:
+   - `npm start`
+
+Backend default URL: `http://localhost:3000`
+
+## Initial Backend Routes (Skeleton)
+- `GET /` - API welcome route
+- `POST /api/auth/register` - register stub
+- `POST /api/auth/login` - login stub
+- `POST /api/auth/logout` - logout stub
+- `GET /api/tasks` - list tasks stub
+- `GET /api/tasks/:id` - get one task stub
+- `POST /api/tasks` - create task stub
+- `PUT /api/tasks/:id` - update task stub
+- `DELETE /api/tasks/:id` - delete task stub
+
+## Database Design
+- SQL schema (`CREATE TABLE` statements): `database/schema.sql`
+
+## Folder Structure
+- `backend/server.js` - backend entry point
+- `backend/src/app.js` - Express app setup
+- `backend/src/routes/` - API route definitions
+- `backend/src/controllers/` - route handler stubs
+- `database/schema.sql` - SQL `CREATE TABLE` statements
 
 ## Technologies
 - **Frontend:** HTML, CSS, JavaScript

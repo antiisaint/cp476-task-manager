@@ -1,0 +1,16 @@
+{
+  "name": "cp476-task-manager",
+  "version": "1.0.0",
+  "description": "Task manager app with Node.js backend",
+  "private": true,
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
